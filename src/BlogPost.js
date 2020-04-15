@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import ReactMarkdown from "react-markdown";
 
 function BlogPost(props) {
@@ -20,7 +20,7 @@ function BlogPost(props) {
 
             <ReactMarkdown className="blog-content" source={content} />
 
-            <Link to="/" className="blog-back-button">
+            <Link to="/#blog" className="blog-back-button">
                 Back
             </Link>
         </>

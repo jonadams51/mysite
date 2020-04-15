@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 
 function BlogListing(props) {
     return (
@@ -15,7 +15,7 @@ function BlogListing(props) {
                         <div className="blog-item" key={key}>
                             <div className="blog-listing-title">
                                 <p className="text-center">{created.format("Do MMMM YYYY")}</p>
-                                <Link to={"/" + url}>
+                                <Link to={"/" + url + "#blog"}>
                                     <h2>{title}</h2>
                                 </Link>
                             </div>

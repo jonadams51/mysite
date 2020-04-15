@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import App from "./App";
 import Home from "./Home";
 
 ReactDOM.render(
-    <HashRouter>
+    <BrowserRouter>
         <App>
             <Route exact path="/:url?" component={Home} />
         </App>
-    </HashRouter>,
+    </BrowserRouter>,
 
     document.getElementById("root")
 );
