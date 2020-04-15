@@ -1,12 +1,15 @@
 @import-normalize;
 
+$white: #eee;
+$brightWhite: #fff;
+
 .text-center {
     text-align: center;
 }
 
 body {
     background: #333;
-    color: #eee;
+    color: $white;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     margin: 0;
@@ -35,16 +38,22 @@ h3 {
 }
 
 a {
-    color: white;
-    text-decoration: none;
+    color: $white;
+    text-decoration: underline;
 }
 
 p, li {
     line-height: 30px;
 
     a {
-        color: red;
-        text-decoration: underline;
+        transition: all 0.2s ease;
+        position: relative;
+
+        &:hover {
+            color: $brightWhite;
+            text-shadow: -3px 3px 2px rgba(0, 0, 0, 0.3);
+            top: -1px;
+        }
     }
 }
 
@@ -58,7 +67,7 @@ header, section {
 
 header {
     background: #a00;
-    color: #eee;
+    color: $white;
     text-align: center;
 
     .logo {
@@ -82,14 +91,14 @@ header {
 footer {
     padding: 20px 0;
     background: #a00;
-    color: #eee;
+    color: $white;
     width: 100%;
     text-align: center;
 
     a {
         font-size: 30px;
         margin: 20px;
-        color: #eee;
+        color: $white;
     }
 }
 
@@ -120,10 +129,6 @@ footer {
 
         li {
             margin: 0 20px;
-
-            a {
-                color: inherit;
-            }
         }
     }
 }
@@ -141,25 +146,31 @@ footer {
         margin-bottom: 10px;
     }
 
+    .blog-back-button {
+        text-decoration: none;
+        transition: background-color 0.5s ease;
+        background: #aa0000;
+        padding: 10px 20px;
+
+        &:before {
+            content: '\00ab';
+            font-size: 23px;
+            margin-right: 5px;
+        }
+
+        &:hover {
+            background: lighten(#aa0000, 5%);
+        }
+    }
+
     .blog-header {
         margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .blog-back-button {
-            width: 10%;
-
-            &:before {
-                content: '\00ab';
-                font-size: 23px;
-                margin-right: 5px;
-            }
-        }
     }
 
     .blog-title {
-        width: 80%;
         margin-right: 10%;
     }
 
@@ -253,13 +264,3 @@ footer {
     }
 }
 
-//@media (min-width: 800px) {
-//    .blog-listing {
-//        .blog-item {
-//            display: inline-block;
-//            vertical-align: top;
-//            width: 46%;
-//            margin: 0 2%;
-//        }
-//    }
-//}

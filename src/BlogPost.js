@@ -12,17 +12,17 @@ function BlogPost(props) {
     return (
         <>
             <div className="blog-header">
-                    <Link to="/" className="blog-back-button">
-                        Back
-                    </Link>
-
-                    <div className="blog-title">
-                        <h1>{title}</h1>
-                        <p className="text-center">{created.format("DD MMMM YYYY")}</p>
-                    </div>
+                <div className="blog-title">
+                    <h1>{title}</h1>
+                    <p className="text-center">{created.format("DD MMMM YYYY")}</p>
                 </div>
+            </div>
 
             <ReactMarkdown className="blog-content" source={content} />
+
+            <Link to="/" className="blog-back-button">
+                Back
+            </Link>
         </>
     );
 }

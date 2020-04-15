@@ -14,8 +14,8 @@ function BlogListing(props) {
                     return (
                         <div className="blog-item" key={key}>
                             <div className="blog-listing-title">
+                                <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                                 <Link to={"/" + url}>
-                                    <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                                     <h2>{title}</h2>
                                 </Link>
                             </div>
