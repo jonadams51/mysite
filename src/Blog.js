@@ -27,7 +27,8 @@ const fetchPosts = () => {
                     updated: moment(post.gsx$updated.$t, 'YYYY-MM-DD'),
                     title: post.gsx$title.$t,
                     content: post.gsx$content.$t,
-                    status: post.gsx$status.$t
+                    status: post.gsx$status.$t,
+                    hero: post.gsx$hero.$t,
                 }
             }).sort((a,b) => {
                 return b.created.format('YYYYMMDD') - a.created.format('YYYYMMDD');
@@ -69,7 +70,7 @@ const Blog = () => {
     return (
         <>
             <h1>Blog</h1>
-            <p className="text-center">Error loading blog content, please check back later!</p>
+            <p className="text-center">Blog content unavailable, please check back later!</p>
         </>
     );
 }

@@ -5,11 +5,10 @@ function BlogListing(props) {
     return (
         <>
             <h1>Blog</h1>
-            <p className="text-center">I blog about anything I want to remember, not necessarily just dev stuff!</p>
 
             <div className="blog-listing">
                 {props.posts.map((post, key) => {
-                    const { url, created, title } = post;
+                    const { url, created, title, hero } = post;
 
                     return (
                         <div className="blog-item" key={key}>

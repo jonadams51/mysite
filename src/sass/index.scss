@@ -20,12 +20,12 @@ h2,
 h3,
 h4,
 h5 {
-
+    text-align: center;
     font-weight: 900;
 }
 
 h1 {
-    margin: 0 0 60px 0;
+    margin: 0 0 30px 0;
     font-size: 55px;
 }
 
@@ -61,7 +61,7 @@ ul {
     padding: 0;
 }
 
-header, section {
+header {
     padding: 60px;
 }
 
@@ -103,13 +103,7 @@ footer {
 }
 
 .content {
-    h1 {
-        text-align: center;
-    }
-
     section {
-        padding: 60px 10%;
-
         &:nth-child(even) {
             background: rgba(255, 255, 255, 0.1);
         }
@@ -117,6 +111,7 @@ footer {
 }
 
 .home {
+    padding: 60px 5%;
     text-align: center;
 
     p {
@@ -143,7 +138,7 @@ footer {
     }
 
     h1 {
-        margin-bottom: 10px;
+        padding: 60px 0 30px;
     }
 
     .blog-back-button {
@@ -164,17 +159,20 @@ footer {
     }
 
     .blog-header {
-        margin-bottom: 40px;
-        display: flex;
         align-items: center;
         justify-content: center;
+
+        .blog-title {
+            padding: 60px 5%;
+        }
     }
     
     .blog-content {
+        margin: 0 5% 60px;
+        padding: 60px;
+
         h2, h3 {
-            &:not(:first-child){
-                margin-top: 40px;
-            }
+            margin: 40px 0;
         }
 
         code {
@@ -245,16 +243,18 @@ footer {
     }
 
     .blog-listing {
-        .blog-listing-title {
-            margin: 40px 0;
-        }
 
         h2 {
             margin-top: 0;
         }
 
-        .blog-item:not(:last-of-type) {
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        .blog-item {
+
+            padding: 30px 0;
+
+            &:nth-child(odd) {
+                background: rgba(255, 255, 255, 0.1);
+            }
 
         }
     }

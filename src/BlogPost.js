@@ -7,12 +7,12 @@ function BlogPost(props) {
         window.scrollTo(0, 0)
     });
 
-    const { title, created, content } = props.post;
+    const { title, created, content, hero } = props.post;
 
     return (
         <>
             <div className="blog-header">
-                <div className="blog-title">
+                <div className="blog-title" style={{ backgroundImage: "url(" + hero + ")", backgroundColor: "rgba(255, 255, 255, 0.1)", backgroundSize: "cover", resize: "both" }}>
                     <h1>{title}</h1>
                     <p className="text-center">{created.format("DD MMMM YYYY")}</p>
                 </div>
