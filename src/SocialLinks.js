@@ -11,9 +11,9 @@ const SocialLinks = () => {
                 <a
                     href="mailto:info@jonadams.co.uk"
                     className="twitter"
-                    alt="Email me: info@jondams.co.uk"
+                    aria-label="Email Jon Adams"
                 >
-                    <i className="fa fa-envelope"></i>
+                    <i className="fa fa-envelope" aria-hidden="true"></i>
                 </a>
             </Item>
             <Item>
@@ -21,9 +21,9 @@ const SocialLinks = () => {
                     href="https://www.twitter.com/jonboy51"
                     target="_blank"
                     className="twitter"
-                    alt="Go to my Twitter"
+                    aria-label="Jon Adams on Twitter"
                     rel="noopener noreferrer">
-                    <i className="fa fa-twitter"></i>
+                    <i className="fa fa-twitter" aria-hidden="true"></i>
 
 
                 </a>
@@ -33,10 +33,10 @@ const SocialLinks = () => {
                     href="https://www.linkedin.com/in/jonboy51"
                     target="_blank"
                     className="linkedin"
-                    alt="Go to my Linkedin"
+                    aria-label="Jon Adams on LinkedIn"
                     rel="noopener noreferrer"
                 >
-                    <i className="fa fa-linkedin"></i>
+                    <i className="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
             </Item>
             <Item>
@@ -44,10 +44,10 @@ const SocialLinks = () => {
                     href="https://github.com/jonadams51"
                     target="_blank"
                     className="github"
-                    alt="Go to my Github"
+                    aria-label="Jon Adams on GitHub"
                     rel="noopener noreferrer"
                 >
-                    <i className="fa fa-github-alt"></i>
+                    <i className="fa fa-github-alt" aria-hidden="true"></i>
                 </a>
             </Item>
         </ul>

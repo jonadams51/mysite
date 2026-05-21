@@ -12,7 +12,7 @@ const App = props => {
         <div className="container">
             <header>
                 <Link to="/">
-                    <img alt="JA Logo" src={Logo} className="logo" />
+                    <img alt="JA Logo" src={Logo} className="logo" width="1000" height="1000" />
                 </Link>
 
                 <h1>
@@ -21,9 +21,9 @@ const App = props => {
                 </h1>
             </header>
 
-            <div className="content">
+            <main className="content">
                 {props.children}
-            </div>
+            </main>
 
             <footer>
                 <p>Thanks for stopping by!</p>
