@@ -14,15 +14,19 @@ function BlogPost(props) {
             <div className="blog-header">
                 <div className="blog-title" style={{ backgroundImage: "url(" + hero + ")", backgroundColor: "rgba(255, 255, 255, 0.1)", backgroundSize: "cover", resize: "both" }}>
                     <h1>{title}</h1>
-                    <p className="text-center">{created.format("DD MMMM YYYY")}</p>
+                    <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                 </div>
             </div>
 
-            <ReactMarkdown className="blog-content" source={content} />
+            <div className="blog-content">
+                <ReactMarkdown source={content} />
 
-            <Link to="/#blog" className="blog-back-button">
-                Back
-            </Link>
+                <div className="blog-back">
+                    <Link to="/#blog" className="blog-back-button">
+                        Back
+                    </Link>
+                </div>
+            </div>
         </>
     );
 }

@@ -8,7 +8,7 @@ function BlogListing(props) {
 
             <div className="blog-listing">
                 {props.posts.map((post, key) => {
-                    const { url, created, title, hero } = post;
+                    const { url, created, title, summary } = post;
 
                     return (
                         <div className="blog-item" key={key}>
@@ -16,6 +16,10 @@ function BlogListing(props) {
                                 <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                                 <Link to={"/" + url + "#blog"}>
                                     <h2>{title}</h2>
+                                </Link>
+                                {summary && <p className="blog-listing-summary text-center">{summary}</p>}
+                                <Link to={"/" + url + "#blog"} className="blog-read-more-button">
+                                    Read more
                                 </Link>
                             </div>
                         </div>

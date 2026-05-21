@@ -2,6 +2,7 @@
 
 $white: #eee;
 $brightWhite: #fff;
+$blogReadableWidth: 720px;
 
 .text-center {
     text-align: center;
@@ -141,14 +142,18 @@ footer {
     }
 
     h1 {
-        padding: 60px 0 30px;
+        padding: 40px 0 20px;
     }
 
     .blog-back-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
         transition: background-color 0.5s ease;
         background: #aa0000;
         padding: 10px 20px;
+        line-height: 1;
 
         &:before {
             content: '\00ab';
@@ -161,23 +166,36 @@ footer {
         }
     }
 
+    .blog-back {
+        margin-top: 40px;
+        text-align: right;
+    }
+
     .blog-header {
         align-items: center;
         justify-content: center;
 
         .blog-title {
-            padding: 60px 5%;
+            padding: 40px 5%;
+
+            h1 {
+                padding: 0;
+            }
         }
     }
     
     .blog-content {
         padding: 60px 5%;
 
-        max-width: 800px;
+        max-width: $blogReadableWidth;
         margin: 0 auto;
 
         h2, h3 {
             margin: 40px 0;
+        }
+
+        p {
+            text-align: justify;
         }
 
         code {
@@ -253,6 +271,42 @@ footer {
             margin-top: 0;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        .blog-listing-title {
+            width: 90%;
+            max-width: $blogReadableWidth;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .blog-listing-summary {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .blog-read-more-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+            background: #aa0000;
+            padding: 10px 20px;
+            line-height: 1;
+
+            &:after {
+                content: '\00bb';
+                font-size: 23px;
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background: lighten(#aa0000, 5%);
+            }
+        }
+
         .blog-item {
 
             padding: 30px 0;
@@ -264,4 +318,3 @@ footer {
         }
     }
 }
-
