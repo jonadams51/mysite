@@ -4,7 +4,7 @@ const Item = props => {
     return <li style={{ display: "inline-block", verticalAlign: "top" }}>{props.children}</li>;
 };
 
-export default () => {
+const SocialLinks = () => {
     return (
         <ul className="social-links">
             <Item>
@@ -52,4 +52,6 @@ export default () => {
             </Item>
         </ul>
     );
-}
+};
+
+export default SocialLinks;
