@@ -17,7 +17,7 @@ const App = props => {
 
                 <h1>
                     Jon Adams
-                    <span>Full-Stack Web Developer, Bournemouth, UK</span>
+                    <span>Senior Software Engineer, Bournemouth, UK</span>
                 </h1>
             </header>
 

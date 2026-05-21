@@ -13,7 +13,7 @@ const Home = () => {
             <section className="home">
                 <p>Well hello there!</p>
 
-                <p>I'm Jon, a <strong>full-stack web developer</strong> from Bournemouth. I build, maintain and improve web platforms, with a particular focus on <strong>Laravel</strong>, <strong>PHP</strong>, <strong>React</strong>, <strong>MySQL</strong> and the infrastructure behind them.</p>
+                <p>I'm Jon, a <strong>Senior Software Engineer</strong> from Bournemouth. I build, maintain and improve web platforms, with a particular focus on <strong>Laravel</strong>, <strong>PHP</strong>, <strong>React</strong>, <strong>MySQL</strong> and the infrastructure behind them.</p>
 
                 <p>My experience covers the whole stack: backend systems, frontend applications, APIs, databases, deployments, server management, performance, and long-term technical maintainability.</p>
 
