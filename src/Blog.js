@@ -98,6 +98,7 @@ const fetchPosts = () => {
                     content: post.content,
                     status: post.status,
                     hero: post.hero,
+                    heroTextColor: post.herotextcolor,
                 }
             }).sort((a,b) => {
                 return b.created.format('YYYYMMDD') - a.created.format('YYYYMMDD');

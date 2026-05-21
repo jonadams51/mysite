@@ -7,12 +7,19 @@ function BlogPost(props) {
         window.scrollTo(0, 0)
     });
 
-    const { title, created, content, hero } = props.post;
+    const { title, created, content, hero, heroTextColor } = props.post;
+    const heroTitleStyle = {
+        backgroundImage: "url(" + hero + ")",
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        backgroundSize: "cover",
+        color: heroTextColor || "white",
+        resize: "both",
+    };
 
     return (
         <>
             <div className="blog-header">
-                <div className="blog-title" style={{ backgroundImage: "url(" + hero + ")", backgroundColor: "rgba(255, 255, 255, 0.1)", backgroundSize: "cover", resize: "both" }}>
+                <div className="blog-title" style={heroTitleStyle}>
                     <h1>{title}</h1>
                     <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                 </div>
