@@ -11,11 +11,17 @@ const Home = () => {
         <>
             {!url &&
             <section className="home">
-                <p>Well hello there, I'm Jon, a <strong>full-stack web developer</strong> from Bournemouth, pleased to meet you!</p>
-                <p>I'm usually found deep in <strong>Laravel</strong> and/or <strong>React</strong> code, but I'm also skilled in all other areas of the tech stack from server and database management to backend and frontend code.</p>
-                <p>I've helped many companies, from multi-national corporations such as <strong>Volvo</strong>, <strong>Peugeot Citroën Automobiles</strong> and <strong>Volkswagen</strong>, a multitude of <strong>independent retailers</strong> and <strong>local councils</strong> to achieve their digital aspirations.</p>
-                <p>If you could do with someone like to me help you with a web project, large or small, I'm all ears!</p>
+                <p>Well hello there!</p>
 
+                <p>I'm Jon, a <strong>full-stack web developer</strong> from Bournemouth. I build, maintain and improve web platforms, with a particular focus on <strong>Laravel</strong>, <strong>PHP</strong>, <strong>React</strong>, <strong>MySQL</strong> and the infrastructure behind them.</p>
+
+                <p>My experience covers the whole stack: backend systems, frontend applications, APIs, databases, deployments, server management, performance, and long-term technical maintainability.</p>
+
+                <p>I’ve worked on digital products for companies including <strong>BMW</strong>, <strong>Stellantis</strong>, <strong>Volkswagen</strong> and <strong>Porsche</strong>, alongside projects for independent retailers, local councils and smaller organisations with big ideas.</p>
+
+                <p>I’m at my best when turning complex requirements into reliable, understandable systems that people can actually use, maintain and build upon.</p>
+
+                <p>If that sounds like the sort of help your project needs, I’m all ears.</p>
                 <SocialLinks />
             </section>}
 
