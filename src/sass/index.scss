@@ -151,7 +151,7 @@ footer {
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        transition: background-color 0.5s ease;
+        transition: background-color 0.3s ease;
         background: #aa0000;
         padding: 10px 20px;
         line-height: 1;
@@ -170,6 +170,78 @@ footer {
     .blog-back {
         margin-top: 40px;
         text-align: center;
+    }
+
+    .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 0;
+        margin: 10px 0 25px;
+        list-style: none;
+    }
+
+    .blog-tag {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #aa0000;
+        border-radius: 999px;
+        background: #aa0000;
+        padding: 5px 12px;
+        color: $brightWhite;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        transition: background-color 0.3s ease;
+
+        a {
+            color: inherit;
+            position: static;
+            text-decoration: none;
+            text-shadow: none;
+            transition: none;
+
+            &:hover {
+                color: inherit;
+                text-shadow: none;
+                top: auto;
+            }
+        }
+
+        &:hover {
+            background: lighten(#aa0000, 5%);
+        }
+    }
+
+    .blog-tag-active,
+    .blog-tag-active:hover {
+        border-color: transparent;
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .blog-filter {
+        text-align: center;
+        margin: -10px 0 30px;
+
+        p {
+            margin: 0 0 15px;
+        }
+    }
+
+    .blog-clear-filter-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        background: #aa0000;
+        padding: 10px 20px;
+        line-height: 1;
+
+        &:hover {
+            background: lighten(#aa0000, 5%);
+        }
     }
 
     .blog-header {
@@ -288,11 +360,15 @@ footer {
             text-align: justify;
         }
 
+        .blog-listing-empty {
+            padding: 20px 5% 50px;
+        }
+
         .blog-read-more-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.3s ease;
             background: #aa0000;
             padding: 10px 20px;
             line-height: 1;

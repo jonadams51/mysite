@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import moment from "moment";
 
 import BlogListing from "./BlogListing";
@@ -10,6 +10,57 @@ const spreadsheetUrl = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/
 
 const normaliseColumnName = column => {
     return column.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+const parseCsvList = value => {
+    if(!value){
+        return [];
+    }
+
+    const tags = [];
+    const characters = String(value).split("");
+    let currentTag = "";
+    let inQuotedTag = false;
+
+    for(let index = 0; index < characters.length; index += 1){
+        const character = characters[index];
+
+        if(character === '"' && characters[index + 1] === '"'){
+            currentTag += character;
+            index += 1;
+            continue;
+        }
+
+        if(character === '"'){
+            inQuotedTag = !inQuotedTag;
+            continue;
+        }
+
+        if(character === "," && !inQuotedTag){
+            const tag = currentTag.trim();
+
+            if(tag){
+                tags.push(tag);
+            }
+
+            currentTag = "";
+            continue;
+        }
+
+        currentTag += character;
+    }
+
+    const finalTag = currentTag.trim();
+
+    if(finalTag){
+        tags.push(finalTag);
+    }
+
+    return tags.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+}
+
+const normaliseTag = tag => {
+    return tag.trim().toLowerCase();
 }
 
 const parseSpreadsheetResponse = data => {
@@ -97,6 +148,7 @@ const fetchPosts = () => {
                     summary: post.summary,
                     content: post.content,
                     status: post.status,
+                    tags: parseCsvList(post.tags),
                     hero: post.hero,
                     heroTextColor: post.herotextcolor,
                 }
@@ -108,8 +160,10 @@ const fetchPosts = () => {
 
 const Blog = () => {
     const { url } = useParams();
+    const { search } = useLocation();
     const [loadingState, setLoadingState] = useState("loading");
     const [posts, setPosts] = useState([]);
+    const selectedTag = new URLSearchParams(search).get("tag") || "";
 
     useEffect(() => {
         fetchPosts().then(posts => {
@@ -134,7 +188,11 @@ const Blog = () => {
         if (post) return <BlogPost post={post}/>;
 
         const publishedPosts = posts.filter(post => post.status === "published");
-        if (publishedPosts.length) return <BlogListing posts={publishedPosts}/>
+        const visiblePosts = selectedTag
+            ? publishedPosts.filter(post => post.tags.some(tag => normaliseTag(tag) === normaliseTag(selectedTag)))
+            : publishedPosts;
+
+        if (publishedPosts.length) return <BlogListing posts={visiblePosts} selectedTag={selectedTag}/>
     }
 
     return (

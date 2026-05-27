@@ -1,13 +1,14 @@
 import React, {useEffect} from "react";
 import { HashLink as Link } from 'react-router-hash-link';
 import ReactMarkdown from "react-markdown";
+import BlogTags from "./BlogTags";
 
 function BlogPost(props) {
     useEffect(() => {
         window.scrollTo(0, 0)
     });
 
-    const { title, created, content, hero, heroTextColor } = props.post;
+    const { title, created, content, hero, heroTextColor, tags } = props.post;
     const heroTitleStyle = {
         backgroundImage: "url(" + hero + ")",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -21,6 +22,7 @@ function BlogPost(props) {
             <div className="blog-header">
                 <div className="blog-title" style={heroTitleStyle}>
                     <h1>{title}</h1>
+                    <BlogTags tags={tags} />
                     <p className="text-center">{created.format("Do MMMM YYYY")}</p>
                 </div>
             </div>
